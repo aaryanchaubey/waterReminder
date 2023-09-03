@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Water Reminder App</title>
+</head>
+
+<body style="background-image: url('src/bg.jpg');"> 
+    <div class="container">
+        <h1>Water Reminder App</h1>
+        <div class="input-container">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Enter your weight" required>
+        </div>
+        <div class="input-container">
+            <label for="activityLevel">Activity Level:</label>
+            <select id="activityLevel" required>
+                <option value="sedentary">Sedentary</option>
+                <option value="active">Active</option>
+            </select>
+        </div>
+        <!-- Add a new input for custom reminder interval -->
+        <div class="input-container">
+            <label for="customInterval">Custom Interval (minutes):</label>
+            <input type="number" id="customInterval" placeholder="Enter custom interval">
+        </div>
+
+        <button class="remind-button">Set Reminder</button>
+    </div>
+
+    <!-- Include your JavaScript file at the end of the body -->
+    <script src="src/js/waterReminder.js"></script>
+    <script src="src/js/main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then((registration) => {
+              console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch((error) => {
+              console.error('Service Worker registration failed:', error);
+            });
+        }
+      </script>
+      
+</body>
+
+</html>

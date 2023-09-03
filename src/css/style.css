@@ -1,0 +1,138 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+/* Set the background image to cover the whole screen */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('src/bg1.jpg'); /* Replace with your background image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    text-align: center;
+    color: #fff; /* Text color changed to white for contrast */
+    min-height: 100vh; /* Ensures the whole viewport height is covered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the container for the app with a semi-transparent background */
+.container {
+    max-width: 500px;
+    background-color: #fff(241, 244, 248, 0.8); /* Blue background with reduced opacity */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    margin-left: 40%;
+}
+
+/* Style the app title */
+h1 {
+    text-align: center;
+    color: #fff; /* Text color changed to white for contrast */
+    margin-bottom: 20px;
+}
+
+/* Style input fields and labels with animations */
+.input-container {
+    margin-bottom: 20px;
+    text-align: left;
+    opacity: 1;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Apply animations when user interacts with input fields */
+.input-container.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style labels with animation */
+.input-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff; /* Text color changed to white for contrast */
+    font-weight: bold;
+    transition: color 0.5s ease;
+}
+
+/* Change label color on focus */
+.input-container.active label {
+    color: #4CAF50; /* Green color for labels on focus */
+}
+
+/* Style input fields and select with animations */
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    opacity: 1;
+    /* transform: translateY(20px); */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Apply animations when user interacts with input fields */
+input[type="number"].active,
+select.active {
+    opacity: 0;
+    transform: translateY(0);
+}
+
+/* Style the "Set Reminder" button with animations */
+button.remind-button {
+    margin-top: 5%;
+    background-color: #4CAF50;
+    color: #fff; /* Text color changed to white for contrast */
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Add a hover effect and scale the button slightly */
+button.remind-button:hover {
+   
+    background-color: #45a049;
+    transform: scale(1.10);
+}
+
+/* Add more CSS styles for your app's elements here */
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        max-width: 80%; /* Adjust the container width for smaller screens */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Media Query for Tablets (Portrait) */
+@media (max-width: 768px) and (orientation: portrait) {
+    .container {
+        max-width: 90%; /* Adjust the container width for portrait tablets */
+    }
+}
+
+/* Media Query for Tablets (Landscape) */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .container {
+        max-width: 70%; /* Adjust the container width for landscape tablets */
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .container {
+        max-width: 95%; /* Adjust the container width for mobile devices */
+    }
+}
